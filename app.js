@@ -12,14 +12,13 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-//載入 body-parser
+//
 app.use(express.urlencoded({ extended: true }))
 
 // 用POST方式　取得 表單值 res.body
 app.post('/', (req, res) => {
   const password = generatePassword(req.body)
-  const options = req.body
-  res.render('index', { password: password, options: options })
+  res.render('index', { password: password })
 })
 
 app.listen(port, () => {

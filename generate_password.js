@@ -39,12 +39,6 @@ function generatePassword(options) {
     collection = collection.filter((character) => !options.excludeCharacters.includes(character))
   }
 
-  //若條件有錯誤 ,導致  collection 為空陣列, 則回傳 錯誤的文字訊息
-
-  if (collection.length === 0) {
-    return 'There is no valid character in your selection.'
-  }
-
   // start generating password
   //隨機抽取字串
   let password = ''
